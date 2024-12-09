@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caffè Tiziano Bonini</title>
+    <style>
+        header {
+            background: linear-gradient(90deg, #f21111, #d21010);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-logo img {
+            height: 75px;
+            width: 75px;
+            display: block;
+        }
+
+
+        .header-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-container a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            margin: 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .header-container a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+
+        .content img {
+            height: 500px;
+            width: 400px;
+            display: block;
+            margin: 0;
+            padding: 0;
+            border-radius: 10px;
+        }
+
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+
+        button {
+            background-color: #f21111;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #d21010;
+        }
+
+
+        #message {
+            margin-top: 20px;
+            color: #f21111;
+            font-weight: bold;
+        }
+
+
+        footer {
+            background-color: #f21111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+
+        .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            color: #f21111;
+        }
+
+
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+        button:active {
+    transform: scale(0.95);
+    background-color: #b10e0e;
+}
+
+    </style>
+</head>
+<body>
+<header>
+
+    <div class="header-logo">
+        <a href="../../../Desktop/Новая%20папка%20(4)/soj.html"> <img src=".idea/ll.jpg" alt="Сайт логотипі"/></a>
+    </div>
+
+
+    <div class="header-container">
+        <a href="../../../Desktop/Новая%20папка%20(4)/menu1.html">Menu</a>
+        <a href="../../../Desktop/Новая%20папка%20(4)/forme.html">О Нас</a>
+        <a href="dos.html">Доставка</a>
+    </div>
+</header>
+
+
+<div class="content">
+    <article>
+        <a href="../../../Desktop/Новая%20папка%20(4)/soj.html">
+            <img src=".idea/coffe.jpg" alt="Кофе"/>
+        </a>
+    </article>
+
+    <main>
+        <section id="order">
+            <h2>Заказать кофе</h2>
+            <form action="order.php" method="post" onsubmit="showMessage(event)">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Номер:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Адрес:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="coffee">Выбранный кофе:</label>
+                <select id="coffee" name="coffee" required>
+                    <option value="Эспрессо">Эспрессо</option>
+                    <option value="Капучино">Капучино</option>
+                    <option value="Латте">Латте</option>
+                    <option value="Мокачино">Мокачино</option>
+                    <option value="Фраппе">Фраппе</option>
+                    <option value="Американо">Американо</option>
+                </select>
+
+                <button type="submit">Заказать</button>
+            </form>
+            <div id="message"></div>
+        </section>
+    </main>
+</div>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Caffè Tiziano Bonini. Все права защищены.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+<script>
+    function showMessage(event) {
+        event.preventDefault();
+        document.getElementById("message").innerText = "Сіз тапсырысыңызды қабылданды! 15 минуттан кейін жеткізіледі болады.";
+
+    }
+</script>
+</body>
+</html>

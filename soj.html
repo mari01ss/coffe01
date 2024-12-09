@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caffè Tiziano Bonini</title>
+    <style>
+        header {
+           background-color: #f21111; /
+           color: white;
+           padding: 10px;
+           display: flex;
+           align-items: center;
+           gap: 10px;
+       }
+
+       .header-logo img {
+           height: 75px;
+           width: 75px;
+           display: block;
+       }
+       .header-container {
+    display: flex;          /* Выстраиваем элементы по горизонтали */
+    justify-content: flex-start;  /* Располагаем элементы слева */
+    gap: 20px;              /* Отступы между ссылками */
+}
+
+
+
+       .header-container a {
+           color: #fff;
+           font-size: 24px;
+           text-decoration: none;
+            justify-content: flex-end;
+            gap: 15px
+       }
+
+       .header-container a:hover {
+           color: #8B0000;
+       }
+
+       body {
+           font-family: 'Helvetica', sans-serif;
+           background-color: #f9f9f9;
+           color: #333;
+           margin: 0;
+           padding: 0;
+       }
+
+       main {
+           margin: 20px;
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+           background-image: url('.idea/zern.jpg');
+           background-size: cover;
+           background-position: center;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+       }
+
+       section {
+           padding: 20px;
+           margin: 20px 0;
+           background-color: rgba(255, 255, 255, 0.8);
+           border-radius: 10px;
+           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+           width: 100%;
+           box-sizing: border-box;
+       }
+
+       footer {
+           background-color: #f21111;
+           color: white;
+           padding: 20px;
+           text-align: center;
+           width: 100%;
+       }
+
+       .footer-container {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           flex-wrap: wrap;
+       }
+
+       .social-media a {
+           color: #fff;
+           margin: 0 10px;
+           text-decoration: none;
+       }
+
+       .social-media a:hover {
+           color: #f21111;
+       }
+       <img src=".idea/фон.jpg"/><img src=".idea/zern.jpg" height="1600" width="800"/><img src=".idea/фон.jpg"/>
+   .dropdown {
+   position: relative;
+   display: inline-block;
+   }
+
+   .dropdown a {
+   color: #fff;
+   font-size: 24px;
+   text-decoration: none;
+   padding: 0 10px;
+   }
+
+   .dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: white;
+   color: #333;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   min-width: 160px;
+   z-index: 1;
+   border-radius: 5px;
+   }
+
+   .dropdown-content a {
+   color: #333;
+   padding: 10px;
+   text-decoration: none;
+   display: block;
+   border-bottom: 1px solid #ddd;
+   }
+
+   .dropdown-content a:hover {
+   background-color: #f21111;
+   color: white;
+   }
+
+   .dropdown:hover .dropdown-content {
+   display: block;
+   }
+
+  .share-button {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   z-index: 1000;
+}
+
+.share-circle {
+   width: 60px;
+   height: 60px;
+   background-color: #007bff;
+   color: white;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 24px;
+   cursor: pointer;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   transition: transform 0.3s ease;
+}
+
+.share-circle:hover {
+   transform: scale(1.1);
+}
+.social-links {
+   position: absolute;
+   bottom: 80px;
+   right: 0;
+   display: flex;
+   flex-direction: column; /* Расположение кнопок вертикально */
+   opacity: 0; /* Скрыты по умолчанию */
+   visibility: hidden;
+   transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.share-button:hover .social-links,
+.social-links:hover {
+   opacity: 1; /* Отображение кнопок */
+   visibility: visible;
+}
+
+.social-links a {
+   text-decoration: none;
+   color: white;
+   background-color: #333;
+   padding: 10px 20px;
+   border-radius: 5px;
+   font-size: 14px;
+   margin-bottom: 10px; /* Отступ между кнопками */
+   transition: background-color 0.15s ease;
+}
+
+.social-links a:last-child {
+   margin-bottom: 0; /* Убираем отступ у последней кнопки */
+}
+
+.social-links a:hover {
+   background-color: #555;
+}
+.social-links a:hover {
+   background-color: #555;
+}
+       .header-containe {
+   display: flex;
+
+   gap: 15px;
+}
+
+.menu-link {
+   display: flex;
+   justify-content: flex-end;
+   background-color: #ff5722; /* Оранжевый фон */
+   color: white;
+   font-size: 18px;
+   font-weight: bold;
+   padding: 10px 20px;
+   border-radius: 5px;
+   text-decoration: none;
+   transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход */
+}
+
+.menu-link .icon {
+   margin-right: 8px; /* Отступ между иконкой и текстом */
+}
+
+.menu-link:hover {
+   background-color: #e64a19; /* Темно-оранжевый при наведении */
+   transform: scale(1.05); /* Немного увеличивается при наведении */
+}
+        .hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('сон.jpg'); /* Здесь указать путь к изображению */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Контент на фоне */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для улучшения контраста */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Заголовок */
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Подзаголовок */
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+.btn {
+    background-color: #ff5722; /* Оранжевая кнопка */
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e64a19; /* Темный оранжевый при наведении */
+}
+
+        <img src="сон.jpg" height="6016" width="4016"/><img src="сон.jpg" height="6016" width="4016"/><img src="сон.jpg" height="6016" width="4016"/><img
+            src="сон.jpg" height="6016" width="4016"/><img src="сон.jpg" height="6016" width="4016"/>
+    #about {
+    text-align: center;
+}
+
+#about img {
+    margin: 10px;
+    width: 30%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* добавляем плавный переход */
+}
+
+#about img:hover {
+    transform: scale(1.1); /* увеличиваем изображение при наведении */
+}
+
+#about {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* позволяет изображением автоматически переходить на новую строку при сужении экрана */
+    gap: 20px;
+}
+        #offers {
+    text-align: center;
+    padding: 20px;
+}
+
+#offers img {
+    margin: 10px;
+    width: 300;
+    height: 400;
+    transition: transform 0.3s ease-in-out; /* плавный переход */
+}
+
+#offers img:hover {
+    transform: scale(1.1); /* увеличение при наведении */
+}
+
+#offers {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* изображения будут переходить на новую строку при необходимости */
+    gap: 20px;
+}
+          @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .header-container {
+                justify-content: center;
+            }
+
+            #about img, #offers img {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <!-- Логотип -->
+    <div class="header-logo">
+        <a href="soj.html"> <img src=".idea/ll.jpg" alt="Сайт логотипі"/></a>
+    </div>
+
+
+    <div class="header-container">
+        <div class="header-containe">
+        <a href="menu1.html"class="menu-link">Menu</a>
+            </div>
+    </div>
+        <div class="header-container">
+        <a href="forme.html">О Нас</a>
+        <a href="dos.html">Доставка</a>
+        <!-- Dropdown меню -->
+        <div class="dropdown">
+            <a href="#">Читать</a>
+            <div class="dropdown-content">
+                <a href="https://www.shop.tatte.kz/blog/">Статьи о кофе</a>
+                <a href="https://www.shop.tatte.kz/kak-vybrat-kofe.html">Как выбрать кофе</a>
+                <a href="https://coffee-ucc.com/ru/o-kofe-i-chae/tradicii-kofe-v-mire?srsltid=AfmBOopbrRdFOjiVbN_cuuPGmfAhSQ407JPbHzgrUr0ty3vHQmzR_EX4">Традиции кофе в мире</a>
+            </div>
+        </div>
+    </div>
+    <div class="share-button">
+        <div class="share-circle">+</div>
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        </div>
+    </div>
+
+</header><body>
+<section class="hero">
+    <div class="hero-content">
+        <h1>КОФЕЙНЫЙ АРОМАТ В КАЖДОЙ ЧАШКЕ</h1>
+        <p>Откройте для себя уникальное сочетание ароматного кофе и уютной атмосферы</p>
+
+    </div>
+</section>
+</body>
+
+
+
+
+    <section id="about">
+        <h2>О нашей кофейне</h2>
+        <p>Добро пожаловать в Caffè Tiziano Bonini! Мы гордимся тем, что предлагаем вам только лучшие сорта кофе, обжаренные с любовью и заботой. Наша кофейня — это место, где встречаются качество и комфорт.</p>
+        <img src="fot1.jpg" height="450" width="450"/>
+        <img src=".idea/fot2.jpg" height="450" width="450"/>
+        <img src="fot3.jpg" height="450" width="500"/></section>
+
+    <section id="offers">
+        <h2>Специальные предложения</h2>
+        <p>Каждую неделю у нас есть специальные предложения:</p>
+        <ul>
+            <li>Скидка 10% на все напитки по пятницам!</li>
+            <li>Покупая два кофе, третий в подарок!</li>
+        </ul>
+
+        <img src=".idea/ко.jpg" height="200" width="200"/>
+        <img src=".idea/ко1.webp" height="200" width="200"/>
+        <img src=".idea/ко2.jpeg" height="200" width="200"/><img
+            src=".idea/co3.jpeg" height="200" width="200"/>
+    </section>
+<main>
+    <section id="workshops">
+        <h2>Наши мастер-классы</h2>
+        <p>Присоединяйтесь к нашим ежемесячным мастер-классам и узнайте секреты профессионального приготовления кофе.</p>
+        <ul>
+            <li>Капучино как у бариста</li>
+            <li>Искусство латте-арта</li>
+            <li>Как выбрать идеальные кофейные зерна</li>
+        </ul>
+        <p><a href="https://margo.coffee/myclass">Узнать больше</a></p>
+    </section>
+    <section id="location">
+        <h2>Наше местоположение</h2>
+        <p>Мы находимся в самом сердце города, заходите к нам в любое время!</p>
+        <div id="map">
+            <!-- Вставьте сюда код для интеграции Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.332573174389!2d76.93528637574069!3d43.26540797742643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836ea17ba3d573%3A0x71feffdcb96f6405!2z0YPQu9C40YbQsCDQltC10LvRgtC-0LrRgdCw0L0gMzfQkCwg0JDQu9C80LDRgtGLIDA1MDAwMA!5e0!3m2!1sru!2skz!4v1733278721086!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; Caffè Tiziano Bonini. Все права защищены.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

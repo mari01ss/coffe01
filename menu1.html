@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caffè Tiziano Bonini</title>
+    <style>
+    header {
+            background-color: #f21111;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+    }
+
+    .header-logo img {
+            height: 75px;
+            width: 75px;
+            display: block;
+    }
+
+
+    .header-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-container a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container a:hover {
+            color: #8B0000;
+        }
+
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content img {
+            height: 650px;
+            width: 400px;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-left: 70px;
+        }
+
+
+        footer {
+            background-color: #f21111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+
+        .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            color: #f21111;
+        }
+
+        @media (max-width: 550px) {
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+        .menu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: 70px;
+    transition: transform 0.3s ease; /* Плавный переход для увеличения */
+}
+
+.menu-item img:hover {
+    transform: scale(1.1); /* Увеличение изображения на 10% при наведении */
+
+}
+       .menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:checked + .menu-button + .side-menu {
+    transform: translateX(-250px); /* Меню появляется */
+}
+
+body {
+    cursor: pointer;
+}
+
+body > * {
+    pointer-events: auto;
+}
+
+.menu-toggle:checked ~ .side-menu {
+    display: block;
+}
+
+.side-menu {
+    display: none;
+}
+.menu-button {
+    position: relative;
+    font-family: 'Helvetica', sans-serif;
+    top: 0;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #f21111;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.header-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+
+    .reviews h2 {
+        text-align: center;
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+  .reviews {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 600px; /* Ограничение высоты блока */
+    overflow-y: auto; /* Прокрутка по вертикали */
+}
+
+    .review:hover {
+        transform: scale(1.05);
+    }
+
+    .review p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .review strong {
+        font-weight: bold;
+        color: #f21111;
+    }
+
+    .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+   .social-media a:hover {
+            color: #f21111;
+        }
+
+   @media (max-width: 550px) {
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+   .menu-item img {
+   width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: 70px;
+    opacity: 0.7; /* Начальная прозрачность */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-item img:hover {
+   transform: scale(1.1);
+    opacity: 1; /* Прозрачность возвращается к 1 при наведении */
+}
+ .progress-bar-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 10px; /* Уменьшаем отступы между элементами */
+    }
+        @media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: center; /* Центрируем содержимое */
+    }
+
+
+    </style>
+</head>
+<body><header>
+    <div class="header-logo">
+        <a href="../../../Desktop/Новая%20папка%20(4)/soj.html"> <img src=".idea/ll.jpg" alt="Сайт логотипі"/></a>
+
+    </div>
+    <div class="header-container">
+        <a href="menu1.html">Menu</a>
+        <a href="forme.html">О Нас</a>
+        <a href="dos.html">Доставка</a>
+
+    </div>
+</header>
+
+
+<article class="content">
+
+    <a href="../../../Desktop/Новая%20папка%20(4)/soj.html">
+        <img src=".idea/coffe.jpg" alt="coffee image"/>
+    </a>
+
+    <main>
+        <h2>Восхитительные, приготовленные вручную напитки и вкусные блюда из тщательно отобранных ингредиентов высокого качества</h2>
+        <h2>Всё, что мы делаем, мы делаем с любовью к кофе и делимся ей с вами в Caffè Tiziano Bonini, где бы вы ни находились</h2>
+
+
+        <div class="menu-grid">
+            <div class="menu-item">
+
+
+                <img src=".idea/ss.jpg" height="500" width="678"/>
+                <h3>Капучино</h3>
+                <p>Сливочный капучино с мягкой пенкой</p>
+            </div>
+            <div class="menu-item">
+                <img src=".idea/a.jpg" height="265"idth="190"/>
+                <h3>Латте</h3>
+                <p>Кофе с молоком и нежной пенкой</p>
+            </div>
+            <div class="menu-item">
+                <img src=".idea/aaaa.jpg" alt="Эспрессо"/>
+                <h3>Эспрессо</h3>
+                <p>Классический крепкий эспрессо</p>
+            </div>
+            <div class="menu-item">
+             <img src=".idea/americano.jpg" height="1600"width="1200" alt="Американо"/>
+                <h3>Американо</h3>
+                <p>Лёгкий и бодрящий кофе</p>
+            </div>
+            <div class="menu-item">
+                <img src=".idea/макасино.jpg" height="1200" width="675" alt="Мокачино"/>
+                <h3>Мокачино</h3>
+                <p>Кофе с добавлением шоколада</p>
+            </div>
+            <div class="menu-item">
+              <img src=".idea/frape.jpg" height="1600" width="900" alt="Фраппе"/>
+                <h3>Фраппе</h3>
+                <p>Освежающий холодный кофе</p>
+            </div>
+        </div>
+        </div>
+
+
+    </main>
+</article>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Caffè Tiziano Bonini. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

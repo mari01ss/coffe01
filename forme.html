@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Для адаптивности -->
+    <title>Caffè Tiziano Bonini</title>
+    <style>
+
+        header {
+            background-color: #f21111;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo img {
+            height: 75px;
+            width: 75px;
+            display: block;
+        }
+
+        .header-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-container a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container a:hover {
+            color: #8B0000;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #d40808;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .coffee-image {
+            flex: 0 0 auto;
+            height: 100%;
+            width: auto;
+        }
+
+        .about-text {
+            margin-left: 20px;
+            max-width: 600px;
+            overflow-y: auto;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                flex-direction: column;
+            }
+
+            .header-container a {
+                font-size: 18px;
+            }
+
+            .header-logo img {
+                height: 50px;
+                width: 50px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        footer {
+            background-color: #f21111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            color: #f21111;
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+         table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        td, th {
+          border: 1px solid black;
+          padding: 10px;
+          text-align: center;
+        }
+        th {
+          background-color:  #f21111;
+          color: white
+        }
+        table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для таблицы */
+    border-radius: 8px; /* Закругленные углы таблицы */
+    overflow: hidden; /* Обрезает тень вокруг */
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px; /* Увеличенные отступы для улучшения читабельности */
+    border-bottom: 1px solid #ddd; /* Тонкая граница между строками */
+    text-align: center;
+}
+
+
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    color: #333;
+    font-size: 16px;
+}
+        .menu-toggle {
+    display: none;
+}
+        /* Стили для бокового меню отзывов */
+.menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f21111;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 9999;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    border-left: 3px solid #f21111;
+}
+
+.menu-toggle:checked + .menu-button + .side-menu {
+    right: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #f21111;
+}
+
+.reviews {
+    margin-top: 30px;
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f21111;
+    padding-bottom: 10px;
+}
+
+.review {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review strong {
+    color: #f21111;
+    font-size: 16px;
+}
+
+.review p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+
+    </style>
+</head>
+<body><header>
+    <div class="header-logo">
+        <a href="../../../Desktop/Новая%20папка%20(4)/soj.html"> <img src=".idea/ll.jpg" alt="Сайт логотипі"/></a>
+    </div>
+    <div class="header-container">
+        <a href="../../../Desktop/Новая%20папка%20(4)/menu1.html">Menu</a>
+        <a href="forme.html">О Нас</a>
+        <a href="dos.html">Доставка</a>
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="menu-button">Отзывы</label>
+        <div class="side-menu">
+            <button class="close-button" onclick="document.getElementById('menuToggle').checked = false;">&times;</button>
+            <section class="reviews">
+                <h2>Отзывы наших клиентов</h2>
+                <div class="review">
+                    <p><strong>Александр:</strong> "Прекрасное место для отдыха! Кофе невероятно вкусный, а атмосфера уютная. Обязательно вернусь!"</p>
+                </div>
+                <div class="review">
+                    <p><strong>Мария:</strong> "Очень понравился латте, а особенно десерты! Приветливый персонал, идеальное место для встречи с друзьями."</p>
+                </div>
+                <div class="review">
+                    <p><strong>Ирина:</strong> "Капучино здесь — это нечто! С каждой чашкой хочется возвращаться снова. Очень советую!"</p>
+                </div>
+                <div class="review">
+                    <p><strong>Дмитрий:</strong> "Отличное качество кофе и быстрая доставка. Это место стало моим любимым."</p>
+                </div>
+                <div class="review">
+                    <p><strong>Елена:</strong> "Уютное кафе с отличным обслуживанием. Очень нравится, что можно насладиться как горячими напитками, так и освежающими фраппе."</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</header>
+<hr>
+<main>
+    <article>
+        <a href="../../../Desktop/Новая%20папка%20(4)/soj.html">
+            <img src=".idea/coffe.jpg" height="500" width="400" style="display: block; margin: 0;"/>
+        </a>
+    </article>
+
+    <div class="about-text">
+        <h2>История про нас</h2>
+        <ol>
+            <li>
+                <p>После открытия в Алматы в 2020 году, <strong>Caffè Tiziano Bonini </strong> быстро стала не просто кофейней, а символом итальянского гостеприимства. Винченцо, владелец и мастер своего дела, привез с собой не только лучшие кофейные зерна, но и саму культуру наслаждения кофе — не спеша, в кругу друзей или наедине с книгой.</p>
+            </li>
+
+            <li>
+                <p>Каждый день кофейня встречала гостей ароматом свежеобжаренного кофе, а фирменный "Napoli Espresso" стал любимым напитком горожан. Винченцо лично следил за качеством каждого зерна, обжаривал их по старинной методике, чтобы каждый гость мог ощутить настоящий вкус Италии.</p>
+            </li>
+
+            <li>
+                <p>Помимо кофе, кофейня предлагала классические итальянские десерты: воздушные тирамису и канноли, которые в сочетании с крепким эспрессо напоминали посетителям о солнечных улицах Неаполя. Со временем <strong>Caffè Tiziano Bonini </strong> превратилась в популярное место встреч, где каждый мог найти свой уголок уюта и насладиться моментом.</p>
+            </li>
+        </ol>
+    </div>
+
+
+</main>
+<body>
+
+<h1>Доходы с 2020 по 2024 годы</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Год</th>
+        <th>Доход (в миллионах)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>2020</td>
+        <td>5.0</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>7.5</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>10.2</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>12.8</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>15.0</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Caffè Tiziano Bonini. Все права защищены.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
